@@ -10,7 +10,8 @@ Welcome to Lumache's documentation!
    :maxdepth: 2
    
    CSAPP/index
-   Daily_Reading/315
+   Daily_Reading/index
+   D2L/index
 
 
 

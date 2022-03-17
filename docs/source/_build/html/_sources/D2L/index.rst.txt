@@ -3,21 +3,11 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to Lumache's documentation!
+D2L
 ===================================
 
 .. toctree::
    :maxdepth: 2
    
-   CSAPP/index
-   Daily_Reading/index
-   D2L/index
-
-
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
+   
+   线性代数
