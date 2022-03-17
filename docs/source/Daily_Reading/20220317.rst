@@ -1,0 +1,137 @@
+20220317——论文阅读
+===================
+
+CATN: Cross-Domain Recommendation for Cold-Start Users via Aspect Transfer Network
+--------------------------------------------------------------------------------------
+这篇论文来自武汉大学和阿里(Rong Xiao,Hongbo Deng)的合作，之前看过李晨亮老师在达摩院做分享的视频，当时就有介绍这篇文章
+在作者的列表中还有一位南洋理工(Aixin Sun)的老师。
+
+文章发表在SIGIR（Special Interest Group on Information Retrieval）上，时间是2020年7月25-30。
+
+对于冷启动的用户，其使用的定义是有A,B两个域，A（B）中有数据B（A）中无数据的用户为冷启动用户。
+这里有一个好奇的地方，作者提出了一个end-to-end learning strategy, **这是怎么实现的**，因为传统的是通过学习用户和项目的表示，然后学习得到一个mapping函数来实现的。
+这应该算是一个创新点，另一个创新点是他利用了user/item的review document信息，相当于加入了额外的信息。
+
+在摘要中看到的几个技术：
+
+1. attention machanism
+   
+2. aspect transfer network
+
+在实验部分，其假设了三个场景：scenario 1 (Book → Movie)，scenario 2 (Movie → Music)，scenario 3 (Book → Music)。
+使用到的评价标准MSE，预测准确性；
+
+其用到的baseline: CMF,EMCDR（在训练集上的重叠用户数量，当重叠用户（5%）很少的时候EMCDR性能还是可以的）,CDLFM,DFM,R-DFM,ANR.同时其还比较了CATN各个组件的重要性。
+
+在以后的工作中，作者提出了Graph-based CDR.
+
+看完摘要和总结有一个问题：作者有没有用到common users? 看到实验部分的内容是用到了的。
+
+Cross-Domain Recommendation: An Embedding and Mapping Approach
+----------------------------------------------------------------
+计算所CAS key（数据智能系统实验室）实验室的的文章，沈华伟，靳小龙，程学旗这三位老师的。
+
+这篇文章应该算是Cross-Domain这一个话题下很经典的一篇文章。
+
+文章发表在International Joint Conference on Artificial Intelligence(IJCAI上)，发表的时间是2017年。
+
+文章主要有两个创新点：
+
+1. mapping function的学习，作者没有使用线性的function,而选择使用a multi-layer perceptron去学习得到一个非线性的function。
+
+2. 对于mapping function的学习仅使用数据量较为丰富的实体（user）
+   
+   第一点应该是可行的，利用深度学习中的卷积等的多种方式；第二点，作者给出的理由是这样可以避免noise,这一点和之前看到电子科技大学的硕士毕业论文还挺像的。
+
+其的实验用到的数据是Netflix和douban的电影数据，评价指标用的是RMSE和AUC(Area Under the Curve)。
+其在实验中用到的baseline主要有CMF,CST,LFM,MF_EMCDR_LIN,MF_EMCDR_MLP。
+其还用一张图表示了mapping function是MLP的优势。
+从算法的图示上面可以发现，这篇文章对于特征的获取使用到了MF。
+
+这篇文章的源码需要去跑一下，论文再精读两遍。
+
+
+Cross-domain Recommender Systems
+-------------------------------------
+这是一篇综述类型的文章，发表在Recommender systems handbook，这是一本书[M]，时间是2015年，比较久远了。
+马德里自治大学的一篇论文。
+
+这篇暂时没有读。
+
+
+Personalized Adaptive Meta Learning for Cold-start User Preference Prediction
+------------------------------------------------------------------------------
+这是一篇关于用户冷启动偏好预测的文章，使用了meta-learning相关的内容。
+这篇文章是南洋理工大学与阿里合作的文章，作者里面有淘宝的，文章发表在AAAT（Conference on Artificial Intelligence）,时间是2021年。
+
+这篇文章使用的是meta-learning的方法，基于MELU的模型。
+其将冷启动用户的个性化偏好预测看成是few-short learning problem
+
+其创新点在于：
+1. 同时考虑了major users和minor users(我看下来的第一遍感觉是主要用户和小众用户)
+2. 应用的两个方法，一是similarity-based的方法，用于寻找最相似的用户；二是tree-based的方法，用来存储用户的特征
+3. 为了节约内存，设计了一个memory agnostic regularizer的方法
+   
+第二第三个创新点不知道是什么意思，没有理解其具体是怎么实现的。
+文章提出的模型叫做PAML（Personalized Adaptive Meta Learning）
+实验所选择的baseline包括：MeLU，MEta-SGD,Transfer learning[参考论文：A survey on deep transfer learning]
+
+
+
+---------------------------------------------------------------------------------
+半监督的学习。这篇文章发表在CIKM （The Conference on Information and Knowledge Management）2019上面
+
+研究团队是韩国的学校。Dept. of Computer Science and Engineering, POSTECH。
+
+其创新点是，其在实验的时候仅考虑了只有几个用户重叠的情况，这比较接近实际的应用场景，
+同时这也是半监督学习的核心所在，其将两个域共有的用户认为是labled data，将没有标记的item认为是unlabled data,
+这里有一点疑问，这个item是用来做什么的呢？
+
+作者将user和item表示成距离？这里我有点不理解是将连个的互动程度关联成距离嘛？their interactions are represneted by the distanes.
+
+其还利用到了neighborhood的信息，a multi-hop neighborhood inference technique.这里所用到的
+neighborhood Information到底指的是什么呢？
+
+提出的模型名称叫做SSCDR.
+
+DCDIR: A Deep Cross-Domain Recommendation System for Cold Start Users in Insurance Domain
+---------------------------------------------------------------------------------------------------
+看到题目第一反应：这是有特定应用场景的，在保险业务中，这个业务和其他业务相比有什么特殊性嘛？
+看到作者单位就觉得不奇怪了，是平安科技的，算是工业界的一篇文章啦。
+这篇文章发表在SIGIR上，2020年的文章
+
+保险数据的特殊性：复杂，低的购买率
+
+创新点：
+1、more effective user and item latent features in both domains 这个我猜测可能是在Knowledge graph上面使用到meta-path
+2、GRU这个我也不知道是什么东西，它主要是用对源域中用户的动态兴趣进行建模的。
+3、mapping function使用的是multi-layer perceptions 多层感知机。
+
+EMCDR真的是一篇很经典的文章，这里的实验当中又有用到。
+
+评价指标里用到了一个NDCG，我上次看MeLU那篇文章里面也有用到，这到底是什么意思？
+
+A Multi-View Deep Learning Approach for Cross Domain User Modeling in Recommendation Systems
+-----------------------------------------------------------------------------------------------------
+Columbia University与Microsoft Research的合作论文
+发表在2015年的WWW（World Wide Web）上
+
+作者提到了这篇文章中所贡献出来的数据集【Jie Tang, Sen Wu, Jimeng Sun, and Hang Su. Cross-domain collaboration recommendation. In KDD’12, pages 1285–1293.】
+
+这篇文章的核心是content-based，这里的content使用的是用户的浏览器访问记录和查询内容，他使用了一个multi-view deep learning model 去学习不同域之间的用户特征和item特征。
+
+他在摘要里提高与传统的sota的方法相比，其对于冷启动用户的性能可以增加115%，这个指标他是用什么来衡量的？
+
+
+Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommendation Systems
+--------------------------------------------------------------------------------------------------
+这篇文章发表在AAAI-2019年，
+山东大学和南京航空航天大学的一篇合作(后者也可能只是挂名)
+
+作者认为的创新点：
+1. 将review text和item content一起都考虑进去
+2. 利用了一个Stacked Denoising Autoencoders，将上述的这些side Information和rating matrix进行更好的结合
+3. mapping function 还是用的multi-layer perceptron
+
+我看下来对这篇文章没有什么感觉，感觉就这样？
+   

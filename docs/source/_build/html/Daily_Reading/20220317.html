@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20220317——论文阅读 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="D2L" href="../D2L/index.html" />
+    <link rel="prev" title="怎么读论文–by 李沐" href="reading_tips.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Lizzle
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">论文阅读</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reading_tips.html">怎么读论文–by 李沐</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">20220317——论文阅读</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#catn-cross-domain-recommendation-for-cold-start-users-via-aspect-transfer-network">CATN: Cross-Domain Recommendation for Cold-Start Users via Aspect Transfer Network</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-domain-recommendation-an-embedding-and-mapping-approach">Cross-Domain Recommendation: An Embedding and Mapping Approach</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-domain-recommender-systems">Cross-domain Recommender Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#personalized-adaptive-meta-learning-for-cold-start-user-preference-prediction">Personalized Adaptive Meta Learning for Cold-start User Preference Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#dcdir-a-deep-cross-domain-recommendation-system-for-cold-start-users-in-insurance-domain">DCDIR: A Deep Cross-Domain Recommendation System for Cold Start Users in Insurance Domain</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-multi-view-deep-learning-approach-for-cross-domain-user-modeling-in-recommendation-systems">A Multi-View Deep Learning Approach for Cross Domain User Modeling in Recommendation Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#deeply-fusing-reviews-and-contents-for-cold-start-users-in-cross-domain-recommendation-systems">Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommendation Systems</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Lizzle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">论文阅读</a> &raquo;</li>
+      <li>20220317——论文阅读</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Daily_Reading/20220317.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>20220317——论文阅读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="catn-cross-domain-recommendation-for-cold-start-users-via-aspect-transfer-network">
+<h2>CATN: Cross-Domain Recommendation for Cold-Start Users via Aspect Transfer Network<a class="headerlink" href="#catn-cross-domain-recommendation-for-cold-start-users-via-aspect-transfer-network" title="Permalink to this headline">¶</a></h2>
+<p>这篇论文来自武汉大学和阿里(Rong Xiao,Hongbo Deng)的合作，之前看过李晨亮老师在达摩院做分享的视频，当时就有介绍这篇文章
+在作者的列表中还有一位南洋理工(Aixin Sun)的老师。</p>
+<p>文章发表在SIGIR（Special Interest Group on Information Retrieval）上，时间是2020年7月25-30。</p>
+<p>对于冷启动的用户，其使用的定义是有A,B两个域，A（B）中有数据B（A）中无数据的用户为冷启动用户。
+这里有一个好奇的地方，作者提出了一个end-to-end learning strategy, <strong>这是怎么实现的</strong>，因为传统的是通过学习用户和项目的表示，然后学习得到一个mapping函数来实现的。
+这应该算是一个创新点，另一个创新点是他利用了user/item的review document信息，相当于加入了额外的信息。</p>
+<p>在摘要中看到的几个技术：</p>
+<ol class="arabic simple">
+<li><p>attention machanism</p></li>
+<li><p>aspect transfer network</p></li>
+</ol>
+<p>在实验部分，其假设了三个场景：scenario 1 (Book → Movie)，scenario 2 (Movie → Music)，scenario 3 (Book → Music)。
+使用到的评价标准MSE，预测准确性；</p>
+<p>其用到的baseline: CMF,EMCDR（在训练集上的重叠用户数量，当重叠用户（5%）很少的时候EMCDR性能还是可以的）,CDLFM,DFM,R-DFM,ANR.同时其还比较了CATN各个组件的重要性。</p>
+<p>在以后的工作中，作者提出了Graph-based CDR.</p>
+<p>看完摘要和总结有一个问题：作者有没有用到common users? 看到实验部分的内容是用到了的。</p>
+</div>
+<div class="section" id="cross-domain-recommendation-an-embedding-and-mapping-approach">
+<h2>Cross-Domain Recommendation: An Embedding and Mapping Approach<a class="headerlink" href="#cross-domain-recommendation-an-embedding-and-mapping-approach" title="Permalink to this headline">¶</a></h2>
+<p>计算所CAS key（数据智能系统实验室）实验室的的文章，沈华伟，靳小龙，程学旗这三位老师的。</p>
+<p>这篇文章应该算是Cross-Domain这一个话题下很经典的一篇文章。</p>
+<p>文章发表在International Joint Conference on Artificial Intelligence(IJCAI上)，发表的时间是2017年。</p>
+<p>文章主要有两个创新点：</p>
+<ol class="arabic">
+<li><p>mapping function的学习，作者没有使用线性的function,而选择使用a multi-layer perceptron去学习得到一个非线性的function。</p></li>
+<li><p>对于mapping function的学习仅使用数据量较为丰富的实体（user）</p>
+<p>第一点应该是可行的，利用深度学习中的卷积等的多种方式；第二点，作者给出的理由是这样可以避免noise,这一点和之前看到电子科技大学的硕士毕业论文还挺像的。</p>
+</li>
+</ol>
+<p>其的实验用到的数据是Netflix和douban的电影数据，评价指标用的是RMSE和AUC(Area Under the Curve)。
+其在实验中用到的baseline主要有CMF,CST,LFM,MF_EMCDR_LIN,MF_EMCDR_MLP。
+其还用一张图表示了mapping function是MLP的优势。
+从算法的图示上面可以发现，这篇文章对于特征的获取使用到了MF。</p>
+<p>这篇文章的源码需要去跑一下，论文再精读两遍。</p>
+</div>
+<div class="section" id="cross-domain-recommender-systems">
+<h2>Cross-domain Recommender Systems<a class="headerlink" href="#cross-domain-recommender-systems" title="Permalink to this headline">¶</a></h2>
+<p>这是一篇综述类型的文章，发表在Recommender systems handbook，这是一本书[M]，时间是2015年，比较久远了。
+马德里自治大学的一篇论文。</p>
+<p>这篇暂时没有读。</p>
+</div>
+<div class="section" id="personalized-adaptive-meta-learning-for-cold-start-user-preference-prediction">
+<h2>Personalized Adaptive Meta Learning for Cold-start User Preference Prediction<a class="headerlink" href="#personalized-adaptive-meta-learning-for-cold-start-user-preference-prediction" title="Permalink to this headline">¶</a></h2>
+<p>这是一篇关于用户冷启动偏好预测的文章，使用了meta-learning相关的内容。
+这篇文章是南洋理工大学与阿里合作的文章，作者里面有淘宝的，文章发表在AAAT（Conference on Artificial Intelligence）,时间是2021年。</p>
+<p>这篇文章使用的是meta-learning的方法，基于MELU的模型。
+其将冷启动用户的个性化偏好预测看成是few-short learning problem</p>
+<p>其创新点在于：
+1. 同时考虑了major users和minor users(我看下来的第一遍感觉是主要用户和小众用户)
+2. 应用的两个方法，一是similarity-based的方法，用于寻找最相似的用户；二是tree-based的方法，用来存储用户的特征
+3. 为了节约内存，设计了一个memory agnostic regularizer的方法</p>
+<p>第二第三个创新点不知道是什么意思，没有理解其具体是怎么实现的。
+文章提出的模型叫做PAML（Personalized Adaptive Meta Learning）
+实验所选择的baseline包括：MeLU，MEta-SGD,Transfer learning[参考论文：A survey on deep transfer learning]</p>
+<p>研究团队是韩国的学校。Dept. of Computer Science and Engineering, POSTECH。</p>
+<p>其创新点是，其在实验的时候仅考虑了只有几个用户重叠的情况，这比较接近实际的应用场景，
+同时这也是半监督学习的核心所在，其将两个域共有的用户认为是labled data，将没有标记的item认为是unlabled data,
+这里有一点疑问，这个item是用来做什么的呢？</p>
+<p>作者将user和item表示成距离？这里我有点不理解是将连个的互动程度关联成距离嘛？their interactions are represneted by the distanes.</p>
+<p>其还利用到了neighborhood的信息，a multi-hop neighborhood inference technique.这里所用到的
+neighborhood Information到底指的是什么呢？</p>
+<p>提出的模型名称叫做SSCDR.</p>
+</div>
+<div class="section" id="dcdir-a-deep-cross-domain-recommendation-system-for-cold-start-users-in-insurance-domain">
+<h2>DCDIR: A Deep Cross-Domain Recommendation System for Cold Start Users in Insurance Domain<a class="headerlink" href="#dcdir-a-deep-cross-domain-recommendation-system-for-cold-start-users-in-insurance-domain" title="Permalink to this headline">¶</a></h2>
+<p>看到题目第一反应：这是有特定应用场景的，在保险业务中，这个业务和其他业务相比有什么特殊性嘛？
+看到作者单位就觉得不奇怪了，是平安科技的，算是工业界的一篇文章啦。
+这篇文章发表在SIGIR上，2020年的文章</p>
+<p>保险数据的特殊性：复杂，低的购买率</p>
+<p>创新点：
+1、more effective user and item latent features in both domains 这个我猜测可能是在Knowledge graph上面使用到meta-path
+2、GRU这个我也不知道是什么东西，它主要是用对源域中用户的动态兴趣进行建模的。
+3、mapping function使用的是multi-layer perceptions 多层感知机。</p>
+<p>EMCDR真的是一篇很经典的文章，这里的实验当中又有用到。</p>
+<p>评价指标里用到了一个NDCG，我上次看MeLU那篇文章里面也有用到，这到底是什么意思？</p>
+</div>
+<div class="section" id="a-multi-view-deep-learning-approach-for-cross-domain-user-modeling-in-recommendation-systems">
+<h2>A Multi-View Deep Learning Approach for Cross Domain User Modeling in Recommendation Systems<a class="headerlink" href="#a-multi-view-deep-learning-approach-for-cross-domain-user-modeling-in-recommendation-systems" title="Permalink to this headline">¶</a></h2>
+<p>Columbia University与Microsoft Research的合作论文
+发表在2015年的WWW（World Wide Web）上</p>
+<p>作者提到了这篇文章中所贡献出来的数据集【Jie Tang, Sen Wu, Jimeng Sun, and Hang Su. Cross-domain collaboration recommendation. In KDD’12, pages 1285–1293.】</p>
+<p>这篇文章的核心是content-based，这里的content使用的是用户的浏览器访问记录和查询内容，他使用了一个multi-view deep learning model 去学习不同域之间的用户特征和item特征。</p>
+<p>他在摘要里提高与传统的sota的方法相比，其对于冷启动用户的性能可以增加115%，这个指标他是用什么来衡量的？</p>
+</div>
+<div class="section" id="deeply-fusing-reviews-and-contents-for-cold-start-users-in-cross-domain-recommendation-systems">
+<h2>Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommendation Systems<a class="headerlink" href="#deeply-fusing-reviews-and-contents-for-cold-start-users-in-cross-domain-recommendation-systems" title="Permalink to this headline">¶</a></h2>
+<p>这篇文章发表在AAAI-2019年，
+山东大学和南京航空航天大学的一篇合作(后者也可能只是挂名)</p>
+<p>作者认为的创新点：
+1. 将review text和item content一起都考虑进去
+2. 利用了一个Stacked Denoising Autoencoders，将上述的这些side Information和rating matrix进行更好的结合
+3. mapping function 还是用的multi-layer perceptron</p>
+<p>我看下来对这篇文章没有什么感觉，感觉就这样？</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="reading_tips.html" class="btn btn-neutral float-left" title="怎么读论文–by 李沐" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../D2L/index.html" class="btn btn-neutral float-right" title="D2L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, lizzle.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
