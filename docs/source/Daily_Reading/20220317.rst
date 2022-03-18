@@ -77,8 +77,9 @@ Personalized Adaptive Meta Learning for Cold-start User Preference Prediction
 实验所选择的baseline包括：MeLU，MEta-SGD,Transfer learning[参考论文：A survey on deep transfer learning]
 
 
-
+Semi-Supervised Learning for Cross-Domain Recommendation to Cold-Start Users
 ---------------------------------------------------------------------------------
+
 半监督的学习。这篇文章发表在CIKM （The Conference on Information and Knowledge Management）2019上面
 
 研究团队是韩国的学校。Dept. of Computer Science and Engineering, POSTECH。
@@ -134,4 +135,19 @@ Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommen
 3. mapping function 还是用的multi-layer perceptron
 
 我看下来对这篇文章没有什么感觉，感觉就这样？
+
+Transfer-Meta Framework for Cross-domain Recommendation to Cold-Start Users
+-------------------------------------------------------------------------------
+这篇文章算是比较符合我的需求的文章，其没有引入额外的信息去做跨域推荐的用户冷启动问题
+这篇文章是信工所+微信合作的一篇文章， Fuzhen Zhuang（庄福振）老师现在在北航的人工智能研究所。
+庄福振老师主要的研究中还是包括很多Cross-domain的，可以找来做进一步的阅读。【https://fuzhenzhuang.github.io/transfer.html】
+老师还经常与He Qing进行合作。
+这篇文章发在了SIGIR的short paper上，之后换了一个名字发在了另一个B类会议上，不太记得是哪一个会议了。
+
+作者首先评价了EMCDR，EMCDR特别的火，但是其通过common user去学习得到mapping function会因为common user很少而受到限制,产生过拟合。
+
+提出了一个新的模型TMCDE（Transfer-Meta CDR）,transfer即预训练阶段，训练一个source model和target model 没有看文章的内容，猜测应该是MF，BRP,CML（CML是什么之前没有看到过）这类的特征分解模型。
+在meta阶段，其使用了一个a task-oriented meta network,将soure 中的user Embedding转移到target中的user Embedding. 
+
+实验的评价指标当中也有用到AUC。
    

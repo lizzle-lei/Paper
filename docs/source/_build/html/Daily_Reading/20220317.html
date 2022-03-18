@@ -16,7 +16,7 @@
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="next" title="D2L" href="../D2L/index.html" />
+    <link rel="next" title="20220318——论文阅读" href="20220318.html" />
     <link rel="prev" title="怎么读论文–by 李沐" href="reading_tips.html" /> 
 </head>
 
@@ -44,11 +44,14 @@
 <li class="toctree-l3"><a class="reference internal" href="#cross-domain-recommendation-an-embedding-and-mapping-approach">Cross-Domain Recommendation: An Embedding and Mapping Approach</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#cross-domain-recommender-systems">Cross-domain Recommender Systems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#personalized-adaptive-meta-learning-for-cold-start-user-preference-prediction">Personalized Adaptive Meta Learning for Cold-start User Preference Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#semi-supervised-learning-for-cross-domain-recommendation-to-cold-start-users">Semi-Supervised Learning for Cross-Domain Recommendation to Cold-Start Users</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#dcdir-a-deep-cross-domain-recommendation-system-for-cold-start-users-in-insurance-domain">DCDIR: A Deep Cross-Domain Recommendation System for Cold Start Users in Insurance Domain</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#a-multi-view-deep-learning-approach-for-cross-domain-user-modeling-in-recommendation-systems">A Multi-View Deep Learning Approach for Cross Domain User Modeling in Recommendation Systems</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#deeply-fusing-reviews-and-contents-for-cold-start-users-in-cross-domain-recommendation-systems">Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommendation Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transfer-meta-framework-for-cross-domain-recommendation-to-cold-start-users">Transfer-Meta Framework for Cross-domain Recommendation to Cold-Start Users</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="20220318.html">20220318——论文阅读</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
@@ -137,6 +140,10 @@
 <p>第二第三个创新点不知道是什么意思，没有理解其具体是怎么实现的。
 文章提出的模型叫做PAML（Personalized Adaptive Meta Learning）
 实验所选择的baseline包括：MeLU，MEta-SGD,Transfer learning[参考论文：A survey on deep transfer learning]</p>
+</div>
+<div class="section" id="semi-supervised-learning-for-cross-domain-recommendation-to-cold-start-users">
+<h2>Semi-Supervised Learning for Cross-Domain Recommendation to Cold-Start Users<a class="headerlink" href="#semi-supervised-learning-for-cross-domain-recommendation-to-cold-start-users" title="Permalink to this headline">¶</a></h2>
+<p>半监督的学习。这篇文章发表在CIKM （The Conference on Information and Knowledge Management）2019上面</p>
 <p>研究团队是韩国的学校。Dept. of Computer Science and Engineering, POSTECH。</p>
 <p>其创新点是，其在实验的时候仅考虑了只有几个用户重叠的情况，这比较接近实际的应用场景，
 同时这也是半监督学习的核心所在，其将两个域共有的用户认为是labled data，将没有标记的item认为是unlabled data,
@@ -177,6 +184,18 @@ neighborhood Information到底指的是什么呢？</p>
 3. mapping function 还是用的multi-layer perceptron</p>
 <p>我看下来对这篇文章没有什么感觉，感觉就这样？</p>
 </div>
+<div class="section" id="transfer-meta-framework-for-cross-domain-recommendation-to-cold-start-users">
+<h2>Transfer-Meta Framework for Cross-domain Recommendation to Cold-Start Users<a class="headerlink" href="#transfer-meta-framework-for-cross-domain-recommendation-to-cold-start-users" title="Permalink to this headline">¶</a></h2>
+<p>这篇文章算是比较符合我的需求的文章，其没有引入额外的信息去做跨域推荐的用户冷启动问题
+这篇文章是信工所+微信合作的一篇文章， Fuzhen Zhuang（庄福振）老师现在在北航的人工智能研究所。
+庄福振老师主要的研究中还是包括很多Cross-domain的，可以找来做进一步的阅读。【<a class="reference external" href="https://fuzhenzhuang.github.io/transfer.html">https://fuzhenzhuang.github.io/transfer.html</a>】
+老师还经常与He Qing进行合作。
+这篇文章发在了SIGIR的short paper上，之后换了一个名字发在了另一个B类会议上，不太记得是哪一个会议了。</p>
+<p>作者首先评价了EMCDR，EMCDR特别的火，但是其通过common user去学习得到mapping function会因为common user很少而受到限制,产生过拟合。</p>
+<p>提出了一个新的模型TMCDE（Transfer-Meta CDR）,transfer即预训练阶段，训练一个source model和target model 没有看文章的内容，猜测应该是MF，BRP,CML（CML是什么之前没有看到过）这类的特征分解模型。
+在meta阶段，其使用了一个a task-oriented meta network,将soure 中的user Embedding转移到target中的user Embedding.</p>
+<p>实验的评价指标当中也有用到AUC。</p>
+</div>
 </div>
 
 
@@ -184,7 +203,7 @@ neighborhood Information到底指的是什么呢？</p>
           </div>
           <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
         <a href="reading_tips.html" class="btn btn-neutral float-left" title="怎么读论文–by 李沐" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
-        <a href="../D2L/index.html" class="btn btn-neutral float-right" title="D2L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+        <a href="20220318.html" class="btn btn-neutral float-right" title="20220318——论文阅读" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
     </div>
 
   <hr/>

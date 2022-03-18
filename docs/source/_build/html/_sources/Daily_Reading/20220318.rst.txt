@@ -1,0 +1,78 @@
+20220318——论文阅读
+===================
+
+Shared Neural Item Representations for Completely Cold Start Problem
+----------------------------------------------------------------------
+看到题目Item Representation，前面加上shared Neural,共享的是重叠了item嘛？Neural？使用神经网络来训练得到的嘛？
+有一种这篇文章是关于item Cold-Start的问题
+
+文章发表在2021年的Resys中，算是一篇很新的文章了。
+Rakuten,乐天公司。
+
+在之前的研究当中，通常将用户的id/interaction vectors作为user network的input，将item的side Information作为item network的input.
+在本文中，对于item Representation其通过两种途径学习得到，一种是将item的side Information（content）作为item network的input,另一种从用户的user network中学习得到，这是不是类似于将user network进行分解，得到的user Representation和item Representation？
+
+有一点值得关注的是，在论文中其验证了attention mechanisms对于Representation的作用。
+
+在实验中，其用到的指标是recall，在实验阶段，其还计算了user Representation的Euclidean distance.
+
+A Comprehensive Survey on Transfer Learning
+------------------------------------------------
+庄福振老师的文章，关于transfer learning的一篇综述。之前我有过疑惑，感觉Cross-Domain 之前就像是一种transfer learning.tiger说不对，让我去看一下transfer learning的定义。
+
+Amazon.com Recommendation Item-to-Item Collaborative Filtering
+-------------------------------------------------------------------
+这篇文章是协同过滤中以物品进行推荐的开山之作。
+
+
+协同过滤推荐系统综述
+----------------------------
+这篇综述发表在2021年的信息安全学报上，作者是包含计算所的老师（庄福振，敖翔，何清），不知是不是联合培养的学生。
+
+
+Metadata Embeddings for User and Item Cold-start Recommendations
+--------------------------------------------------------------------
+发表在CBRecSys 2015上，作者来自于LYST是英国的一个电商平台。
+
+作者提出的模型名称LightFM，hybird recommendation.
+
+Deep content-based music recommendation
+---------------------------------------------
+特定的领域：音乐推荐
+
+作者来自于：根特大学（比利时），文章发表于2013年，这篇文章的引用量很高。
+文章发表在neurips上，算是很厉害的一篇文章了。
+
+其主要的贡献应该在于将CNN引入到了推荐系统当中。deep convoluntional neural network可以比传统的bag of word更好的表示音频信号。
+
+
+Latent Semantic Models for Collaborative Filtering
+---------------------------------------------------------
+ACM Transactions on Information Systems，2004年
+
+不知道这是不是第一篇文章提出model-base collborative Filtering.
+
+在结论当中看到一句话，the decomposition of user preferences using overlapping user communities is a novel idea. 使用重叠的用户？如何使用的？
+
+Handling Cold-Start Collaborative Filtering with Reinforcement Learning
+----------------------------------------------------------------------------
+文章标题使用强化学习来解决冷启动问题，使用的协同过滤的算法。作者来自CMU，2018年，这篇文章并没有被正式发表出来，其只是发布在了arXiv上面。
+两位作者都是master student,共同一作，这倒是不怎么常见。
+
+看来摘要和结论，它主要讲的是，使用强化学习来学习得到一系列的interview question，当新用户进入系统的时候，拿这些问题进行提问，以此来获得用户的信息。
+有点类似于candidate item的选择。
+
+在实验阶段，其使用的是决策树的模型。
+
+Improved Neighborhood-based Collaborative Filtering
+--------------------------------------------------------
+作者来自于AT&T Labs – Research，这篇文章发表在2007年的KDD上面。
+
+协同过滤是基于最近邻的思想来实现的，文章的第一个贡献点在于它一些gloabal effects移除了，在最后的总结中指出了
+其移除了10个，这个步骤作者称之为data normalizaion；第二个是为每一个最近邻用户进行插值权重，其能够同时进行推导，这里并没有很理解，作者的意思，上面叫做
+同时进行推导。
+
+基于深度学习的推荐系统研究综述
+----------------------------------
+这个作者的单位是北京市遥感信息研究所，文章发表在2018年的计算机学报上
+
