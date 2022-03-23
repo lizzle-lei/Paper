@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20220322——论文阅读 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="D2L" href="../D2L/index.html" />
+    <link rel="prev" title="20220318——论文阅读" href="20220318.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Lizzle
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul class="current">
+<li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">论文阅读</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reading_tips.html">怎么读论文–by 李沐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20220317.html">20220317——论文阅读</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20220318.html">20220318——论文阅读</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">20220322——论文阅读</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#the-datasets-dilemma-how-much-do-we-really-know-about-recommendation-datasets">The Datasets Dilemma: How Much Do We Really Know About Recommendation Datasets?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#multi-view-denoising-graph-auto-encoders-on-heterogeneous-information-networks-for-cold-start-recommendation">Multi-view Denoising Graph Auto-Encoders on Heterogeneous Information Networks for Cold-start Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#mamo-memory-augmented-meta-optimization-for-cold-start-recommendation">MAMO: Memory-Augmented Meta-Optimization for Cold-start Recommendation</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Lizzle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">论文阅读</a> &raquo;</li>
+      <li>20220322——论文阅读</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Daily_Reading/20220322.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>20220322——论文阅读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="the-datasets-dilemma-how-much-do-we-really-know-about-recommendation-datasets">
+<h2>The Datasets Dilemma: How Much Do We Really Know About Recommendation Datasets?<a class="headerlink" href="#the-datasets-dilemma-how-much-do-we-really-know-about-recommendation-datasets" title="Permalink to this headline">¶</a></h2>
+<p>这是一篇讨论数据集的文章，来自Nanyang Technological University，作者是Jin Yao Chin，Yile Chen，Gao Cong。
+这篇文章，发表在2022年的WSDM（Web Search and Data Mining）上.</p>
+<p>The datasets used for implicit feedack based top-K recommendation.
+whether the choice o datasets used for evaluation can influence the observtions and conclusions obtaind.
+数据集的选择将影响robustness.</p>
+<p>文章通过一系列well-defined data characteristics来对目前主流的数据集的特征进行了分析，分析其相似性和不同点。</p>
+<p>这篇文章需要后续好好阅读一下，来看看对于这次的毕业设计，我应当选择哪些数据集来完成实验。</p>
+</div>
+<div class="section" id="multi-view-denoising-graph-auto-encoders-on-heterogeneous-information-networks-for-cold-start-recommendation">
+<h2>Multi-view Denoising Graph Auto-Encoders on Heterogeneous Information Networks for Cold-start Recommendation<a class="headerlink" href="#multi-view-denoising-graph-auto-encoders-on-heterogeneous-information-networks-for-cold-start-recommendation" title="Permalink to this headline">¶</a></h2>
+<p>这篇文章来自于华南理工大学，与wechat的合作。发表在2021年的KDD上面。</p>
+<p>这篇文章是用来解决冷启动问题的，其将冷启动问题看成是a missing data problem问题。
+这个问题建立在HINS上面，其利用Auto-Encoders去恢复图上user-item的relationship,同时其也将构建一些user-user和item-item的relationship使得相似用户（item）在meta-path上更加接近。</p>
+<p>其使用到了一个Bayesian task weight learner to balance Multi-view greph reconstruction objectives automatically.
+不知道什么是Bayesian task weight learner？</p>
+</div>
+<div class="section" id="mamo-memory-augmented-meta-optimization-for-cold-start-recommendation">
+<h2>MAMO: Memory-Augmented Meta-Optimization for Cold-start Recommendation<a class="headerlink" href="#mamo-memory-augmented-meta-optimization-for-cold-start-recommendation" title="Permalink to this headline">¶</a></h2>
+<p>这篇文章的作者来自于University of New South Wales新南威尔士大学，发表在2020年的KDD上面。</p>
+<p>利用Meta-Optimization的思想：learning a global sharing initialization parameter for all users and then learning the local parameters for user separatel.
+但是现有研究存在的不足是： 利用model-agnostic meta-learing for parameter initialization, the global sharing parameter may lead the model into local optima for some users.</p>
+<p>这篇文章定义了两个 memory matric, task-specific memories 和 feature-specific memories.</p>
+<p>task-specific memories: guide the model fast predicting the user preference.
+可以理解为更快的收敛</p>
+<p>feature-specific memories: guide the model with personalized parameter initialization.
+其能够提供a personalized bias term when initializing the recomender model
+提供一个bias，使得每个用户的初始化参数不同。</p>
+<p>这篇论文考虑了four cold-start situations.</p>
+<p>这两个memory matrix里面具体包含了什么，它是如何实现其功能的？</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="20220318.html" class="btn btn-neutral float-left" title="20220318——论文阅读" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../D2L/index.html" class="btn btn-neutral float-right" title="D2L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, lizzle.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

@@ -59,6 +59,7 @@ Cross-domain Recommender Systems
 这篇暂时没有读。
 
 
+
 Personalized Adaptive Meta Learning for Cold-start User Preference Prediction
 ------------------------------------------------------------------------------
 这是一篇关于用户冷启动偏好预测的文章，使用了meta-learning相关的内容。
@@ -138,6 +139,8 @@ Deeply Fusing Reviews and Contents for Cold Start Users in Cross-Domain Recommen
 
 Transfer-Meta Framework for Cross-domain Recommendation to Cold-Start Users
 -------------------------------------------------------------------------------
+Personalized Transfer of User Preferences for Cross-domain Recommendation
+（这篇文章的长文发表在2022年的WSDM上）
 这篇文章算是比较符合我的需求的文章，其没有引入额外的信息去做跨域推荐的用户冷启动问题
 这篇文章是信工所+微信合作的一篇文章， Fuzhen Zhuang（庄福振）老师现在在北航的人工智能研究所。
 庄福振老师主要的研究中还是包括很多Cross-domain的，可以找来做进一步的阅读。【https://fuzhenzhuang.github.io/transfer.html】

@@ -1,0 +1,207 @@
+20220323论文阅读
+===========================
+
+Meta-learning on Heterogeneous Information Networks for Cold-start Recommendation
+-----------------------------------------------------------------------------------------
+本文的代码：https://github.com/rootlu/MetaHIN
+
+这篇文章来自于北京邮电大学，其涉及微信搜索与应用部门的合作。作者是Lu Yuanfu, Yuan Fang, Chuan Shi
+文章发表在2020年的KDD上。
+
+其在数据层面和模型层面解决了冷启动问题。
+
+1、元学习阶段，在HIN上捕获语义信息。
+在meta-learing阶段设计了一个语义增强的任务构造器在HIN上挖掘更多的语义信息。
+
+2.如果学习得到一个general knowledge，可以适应多个层面的语义
+一个共同适应的元学习者，语义和任务层面的适应，以解决不同任务的语义层面的信息。
+
+元学习是用来解决model level，HIN用来解决的data level.
+
+Fairness among New Items in Cold Start Recommender Systems
+--------------------------------------------------------------
+这篇文章是讲新项目在冷启动中的公平性Fairness的，与毕设选题关系较小，没有阅读
+
+文章发表在2021年的SIGIR上，作者来自于Texas A&M University和Netflix
+
+Learning Graph Meta Embeddings for Cold-Start Ads in Click-Through Rate Prediction
+---------------------------------------------------------------------------------------------
+这篇文章发布在2021年的SIGIR，研究者来自于Alibaba Group
+
+其主要是研究在advertising systems中的Click-Through rate Prediction.
+
+其主要是集中在Embedding的层面
+快速的学习生成intial Embeddings for new ad IDs 基于graph nerual networks and meta learning.
+其同时考虑了新的广告信息以及已经存在的旧的广告信息，GNEs通过创建一个graph来讲new ads 和old ads的信息联系起来。
+
+Learning to Warm Up Cold Item Embeddings for Cold-start Recommendation with Meta Scaling and Shifting Networks
+---------------------------------------------------------------------------------------------------------------------------
+这篇文章发表在2021年的SIGIR上，其来自于zhu yongchun同学，通讯作者是庄福振老师。
+
+又是一篇关于冷启动的文章，针对于Cold Item Embedding
+
+文章想要解决什么样的问题呢？
+
+1、A gap is existing between the cold ID  Embedding and the deep model.
+
+采取的解决方案：Speed up the model fitting for the cold item ID embedding(fast adaptation).
+
+2、Cold ID embedding would be seriously affected by noisy interaction.
+采取的解决方案：Alleviate the influence of noise.
+
+Meta Scaling and Shifting Networks.
+
+1、the scaling function 将cold item ID embedding 转向 warm feature space
+
+2、the shifting networks produce stable embeddings from noisy embeddings.
+
+Meta Warm up Framework(MWUF)：Learn to warm up cold ID embedding.
+
+这篇文章的思想是不是可以迁移到用户的embedding上面呢？
+
+Sparsity Regularization for Cold-Start Recommendation
+---------------------------------------------------------
+这篇文章还没有发表，其是2022年1月28日提交到arxiv上面的。研究者来自于
+Arizona State University.
+
+a novel representation for user-vectors by combining user demographics and user preference
+
+其使用用户的购买行为而不是互动信息。
+
+develop a novel sparse adversarial model.
+
+使用到了一个KL-divergence作为惩罚稀疏。
+
+MetaKG: Meta-learning on Knowledge Graph for Cold-start Recommendation
+-------------------------------------------------------------------------
+这是一篇未发表的文章，来自高云君和陈璐老师的团队，2022年2月8日提交在arXiv上面。
+论文的代码可见：https://github.com/ZJU-DBL/MetaKG
+
+其第一次将meta-learing应用在KG上面，其主要设计了一个collaboratie-aware meta learner：学习用户在每个任务中的preference和一个knowledge-aware meta learner:在KG当中，不同任务的语义表示。
+
+Task-adaptive Neural Process for User Cold-Start Recommendation
+------------------------------------------------------------------
+这篇文章发表在2021年的International World Wide Web Conference上。
+第一作者来自于信工所和网安，其他研究者有来自于澳大利亚麦考瑞大学，小米人工智能实验室，Monash University，数据与系统科学研究院
+通讯作者为周川
+
+a corresponding stochastic process：一个相应的随机过程。
+作者提出了一个模型：TaNP
+
+其能够maps the observed interactions of each user to a predictive distribution, sidestepping some training issues in gradient-based meta-learing models.
+其还设计了Task-adaptive mechanism，其能够学习不同任务之间的相关性，定制全局的知识到与任务相关的解码器中。
+
+代码的链接：https://github.com/IIEdm/TaNP
+
+一些代码的网址：
+https://github.com/hexiangnan/neural_collaborative_filtering
+https://github.com/layer6ai-labs/DropoutNet
+https://github.com/hoyeoplee/MeLU
+https://github.com/rootlu/MetaHIN
+https://github.com/dongmanqing/Code-for-MAMO
+
+Collaborative Filtering with Attribution Alignment for Review-based Non-overlapped Cross Domain Recommendation
+------------------------------------------------------------------------------------------------------------------
+这篇是来自浙江大学郑小林和陈超超老师的团队，发表在2022年的WWW会议上
+
+文章基于Review-based Non-overlapped Recommendation.
+
+在目标域中只有积极的用户-项目评分（这个会带来什么问题呢？）
+
+在不同的域之间没有重叠的用户。
+
+目前有关RNCDR问题有哪些不足呢？
+1、不能将评论信息与其他信息进行结合去表示user embedding 和 item embedding
+
+2、他们不能减少不同域用户和项目之间的差异。
+
+文章提出的模型是Collaborative Filtering with Attribution Alignment model(归因对齐)
+其由两部分组成，一部分是rating perdiction module, 实现信息的聚合；
+另一部分是embedding attribution alignment module，其能够实现
+vertical attribution aligment: 利用典型的样本选择和最优transport使得跨域一致。
+和 horizontal attribution alignment：利用具有归因图对齐的子空间建模来减少差异。
+
+A Deep Framework for Cross-Domain and Cross-System Recommendations
+-------------------------------------------------------------------------
+这篇来自于澳大利亚麦考瑞大学，合作的单位有蚂蚁金服（Chen chaochao）。
+文章发表在2018年的IJCAI上。
+
+目标是实现跨域（CDR）和跨系统（CSR）推荐
+
+这里重点关注跨域推荐（CDR）
+
+其提出的一个算法框架的流程：
+
+1. 利用矩阵分解源域与目标域的评分矩阵，将其分为{U^s, V^s,U^t, V^t}
+   
+2. 考虑到数据之间存在稀疏性问题，分别计算共同用户和非共同用户的评分稀疏度，利用t,Us和稀疏度系数构建形成用户的标准矩阵基准因子矩阵【基准矩阵】U^b。
+   【目的是将源域和目标域中的共同用户做一个综合表示。】
+
+3. 利用全连接的深度学习网络，寻找目标域用户矩阵U^t 到用户标准矩阵U^b的映射关系，最终输出结果hat U^t。
+
+4. 基于矩阵分解，fix(固定) hat U^t，对V^t进行优化，得到hat V^t。将hat U^t * hat V^t 得到最终预测的评分矩阵hat R^t 。
+
+其中有一个点没有明白，为什么要得到这个标准的矩阵U^b，以及这个标准的矩阵为什么是这么实现的，它给我的感觉是通过数据集的稀疏程度，得到权重，并将分解得到源域与目标域的矩阵按照权重相加得到U^b。
+
+Methods and Metrics for Cold-Start Recommendations
+-----------------------------------------------------
+这篇文章发表在2002年的SIGIR上，已经过去了有20年了
+研究团队来自于宾夕法尼亚大学
+
+研究方法：将content和collaborative data相结合，利用一个probabilistic framework来实现，其中content主要是用来实现item的冷启动问题的。
+
+GroupLens: An Open Architecture for Collaborative Filtering of Netnews
+----------------------------------------------------------------------------
+文章发表在1994年，来自MIT，其介绍了GroupLens这个系统，其主要将协同过滤算法应用到了新闻推荐。
+
+
+Using collabrative filtering to weave an information typestry
+---------------------------------------------------------------
+文章发表在1992年，这篇文章首次提出了将collaborative_filtering应用到邮件过滤系统Typesry中
+
+Wide & Deep Learning for Recommender Systems
+---------------------------------------------
+这篇文章来自于Google,有很多的作者。其发表在2016年的DLRS会议上。
+
+研究方法：同时解决Motivation和Generaliztion
+
+- Memorization
+
+LR模型：将原始的sparse特征和叉乘特征作为输入，
+
+通过两个特征向量的叉乘，来构造非线性的特征。
+
+局限性：1. 可能需要更多的人工设计 2. 可能出现过拟合。如果将所有特征叉乘起来，那么几乎相当于纯粹的记住每个训练样本，这个极端情况是最细粒度的叉乘，我们可以通过构造更粗力度的特征交叉来增强泛化性。 3. 无法捕捉在训练数据中未曾出现过的特征对。
+
+- Generalization
+
+Generalization的目的是为稀疏的特征学习得到低维的embedding来捕获特征的相关性。这类模型可以是DNN和FM
+
+优点：更少的人工参与，对历史上没有出现的特征组合有更好的泛化性。
+
+局限性：当user-item matrix非常稀疏时，例如有独特爱好的users以及很小众的items，NN很难为users和items学习得到有效的embedding。在这种情况下，大部分的user-item应该是没有关联的，但稠密的embedding的方法还是可以对所有的user-item pair的非零预测，因此导致over-generalize并推荐不怎么相关的物品。此时Memorization就展示了优势，其可以记住这些特殊的组合。
+
+**Memorization根据历史行为数据，产生的推荐通常和用户已有行为的物品直接相关的物品。而Generalization会学习新的特征组合，提高推荐物品的多样性。**
+
+- Wide部分利用广义的线性模型
+- Deep部分利用前馈神经网络
+
+网络对一些稀疏的特征学习得到一个稠密的embedding，然后和一些原始的稠密特征一起作为网络的输入。
+
+- 采用联合训练（Joint Training）和集成（Ensemble）
+- 集成Ensemble
+    - 每个模型单独训练，再将模型的结果汇总
+- 联合训练的wide部分只需要作一小部分的特征叉乘来弥补deep部分的不足，不需要 一个full-size 的wide 模型
+- 在论文中，作者通过梯度的反向传播，使用 mini-batch stochastic optimization 训练参数，并对wide部分使用带L1正则的Follow- the-regularized-leader (FTRL) 算法，对deep部分使用 AdaGrad算法。
+- 特征叉乘 ： 被推荐的app X 用户下载的app【用户历史下载的app list】
+    - 其中用户历史下载的app list 和被推荐的app list都是一个multi-hot特征，假设app的空间为N，叉乘后的Wide的特征总维数为N*N，wide部分直接学每个特征维度的权重就可以了，只是没出现的特征权重都是0。
+    
+    **Google团队提出了Wide&Deep模型，其将线性模型和深度学习模型相结合，通过联合训练来提升模型整体的性能。其中线性模型具有记忆性，能够根据用户的历史数据，为用户推荐与其历史行为相关的物品。而深度学习模型具有泛化性，能够探索得到历史数据中的隐性关联，提高推荐物品的多样性。**
+
+
+Cross-Domain Generalization and Knowledge Transfer in Transformers Trained on Legal Data
+-----------------------------------------------------------------------------------------
+作者： Jarom´ ırˇSA VELKA（Carnegie Mellon University）
+录取会议： 未发表，于2021年12月发布在arXiv上
+
+研究方法：其利用在其他域中学习得到的信息，将其应用到法律文件领域。
