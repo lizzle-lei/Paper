@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>毕业设计进度 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Lizzle
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Daily_Reading/index.html">论文阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Lizzle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>毕业设计进度</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/本科毕业设计/毕业设计进度.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>毕业设计进度<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="id2">
+<h2>2022年3月<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="id3">
+<h3>2022年3月26日<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>今天关于毕设：找了包含review的dataset，试着对其进行了预处理；早上看了一篇关于数据集选择的paper，但没有什么启发，它的分析是top-k的推荐；又去翻了一篇cross-domain的综述，发现了作者之间的关联，通讯作者是cheng chaochao，原来在蚂蚁金服工作，2021年10月入职的浙大，他是郑小林的学生</p>
+</div></blockquote>
+</div>
+<div class="section" id="id4">
+<h3>2022年3月27日<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>今天的毕设进度：现在在跑PTUPCDR模型，这是我目前少数的能跑通的实验，以及它是拿pytorch写的；上午在解决关于数据读入的问题，分批次读我还是没能实现，但发现了之前写的代码有问题，字典嵌套了字典，转出来的数据都不对了；又看了两遍关于基于review的CDR论文，跑他的代码没跑出来，但是从他的代码里面学到了数据的处理；下午看了PTUPCDR的原文，看了深度学习推荐系统，知道了矩阵分解的相关方法，最常用的方法是gradient-based的方法，也就是你上次看到的那一种；晚上学了pytorch的一些基本内容，以及MLP，写了一下MLP的代码。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id5">
+<h3>2022年3月28日<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>今天的毕设进度有点停滞：上午因为填的表格，有一点点点点的郁闷，不知道自己该怎么填；
+再看一会儿代码，让它继续跑第二个数据集。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id6">
+<h3>2022年3月29日<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>今天的毕设进度：1、对于评分的评价指标我只找到了MAE和RMSE；但如果转化为top-k问题，就可以有多个评价指标，比如准确率，召回率，多样性等，k往往设置为10；我现在存在的问题是，预测出来的评分是一个float，但源数据中的评分是0，1，2，3，4，5，如果在选取topk的时候出现的并列情况，我应该怎么选择？2、看了一下租GPU的平台（矩池云和极链AI），单张2080ti的价格在2.5～3RMB每小时，明天尝试一下。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id7">
+<h3>2022年3月30日<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>今天的毕设进度：跑了九个实验，尝试将实验结果写到log当中，本地端成功了，但是我在服务器上跑的时候没成功，赶进度没有处理这个问题；实验结果里面有一个baseline的结果很奇怪，RMSE和MAE都是10，而且多个task上都出现了，这是什么导致的呢？还是真的就是这样的？；今天导师的中期检查发现大家的进度差距还是很大的，最快的同学论文初稿和系统都已经完成了，也有同学基本都没这么动，自己目前的状态虽然慢，但至少是积极的向前推进的，希望能够继续保持下去；毕设上给自己挖了不少的坑，得一个一个填坑起来；明天需要把中期检查表搞定，上传。论文的初稿也需要开工了，不动手做和写，光看和想，思路并不清晰。今天的成就感来自于跑了9个实验，且不说质量怎么样，但是好歹知道了怎么租GPU并实现在GPU上运行，下午实现了在pychram里面直接远程连接跑，以及晚上的汇报总体还算顺利。</p>
+</div></blockquote>
+</div>
+<div class="section" id="id8">
+<h3>2022年3月31日<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h3>
+</div>
+</div>
+</div>
+<div class="section" id="id9">
+<h1>毕设现有需要解决的问题<a class="headerlink" href="#id9" title="Permalink to this headline">¶</a></h1>
+<ol class="arabic simple">
+<li><p>关于评价指标，在Top-k推荐当中大家是如何实现的？是不是把评分转化成为了Top-k进行推荐？</p></li>
+<li><p>关于对数据集的描述性统计分析；</p></li>
+<li><p>能否实现多个域为一个域进行推荐；</p></li>
+<li><p>embddding的扩充，并分析多个embedding对实验结果的影响;</p></li>
+<li><p>超参数的调整；</p></li>
+<li><p>为什么在我跑的实验当中出现了多次TGT为MAE为10的情况;</p></li>
+<li><p>中期检查表的填写；</p></li>
+<li><p>准备中期检查，自己模拟一下中期检查；</p></li>
+<li><p>开始写毕业论文的初稿；</p></li>
+<li><p>增加代码；</p></li>
+</ol>
+<p>强蕾      Qiang Lei       1827402022      计算机科学与技术学院
+信息管理与信息系统专业</p>
+<blockquote>
+<div><p>中共预备党员  3.8     1/36    319.5   20-21年国家奖学金</p>
+</div></blockquote>
+<p>18-19年校三好学生
+19-20年校三好学生     18.09-19.06 院学生会建设中心干事
+18.09-19.06 院勤工助学办公室外联部干事
+19.09-20.06 院学生会建设中心部长
+19.04-至今 信管班班长</p>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, lizzle.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

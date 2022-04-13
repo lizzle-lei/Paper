@@ -9,7 +9,8 @@ CATN: Cross-Domain Recommendation for Cold-Start Users via Aspect Transfer Netwo
 文章发表在SIGIR（Special Interest Group on Information Retrieval）上，时间是2020年7月25-30。
 
 对于冷启动的用户，其使用的定义是有A,B两个域，A（B）中有数据B（A）中无数据的用户为冷启动用户。
-这里有一个好奇的地方，作者提出了一个end-to-end learning strategy, **这是怎么实现的**，因为传统的是通过学习用户和项目的表示，然后学习得到一个mapping函数来实现的。
+这里有一个好奇的地方，作者提出了一个end-to-end learning strategy, **这是怎么实现的**，
+因为传统的是通过学习用户和项目的表示，然后学习得到一个mapping函数来实现的。
 这应该算是一个创新点，另一个创新点是他利用了user/item的review document信息，相当于加入了额外的信息。
 
 在摘要中看到的几个技术：
@@ -21,11 +22,16 @@ CATN: Cross-Domain Recommendation for Cold-Start Users via Aspect Transfer Netwo
 在实验部分，其假设了三个场景：scenario 1 (Book → Movie)，scenario 2 (Movie → Music)，scenario 3 (Book → Music)。
 使用到的评价标准MSE，预测准确性；
 
-其用到的baseline: CMF,EMCDR（在训练集上的重叠用户数量，当重叠用户（5%）很少的时候EMCDR性能还是可以的）,CDLFM,DFM,R-DFM,ANR.同时其还比较了CATN各个组件的重要性。
+其用到的baseline: CMF,EMCDR（在训练集上的重叠用户数量，当重叠用户（5%）很少的时候EMCDR性能还是可以的）,CDLFM,DFM,R-DFM,ANR.
+同时其还比较了CATN各个组件的重要性。
 
 在以后的工作中，作者提出了Graph-based CDR.
 
 看完摘要和总结有一个问题：作者有没有用到common users? 看到实验部分的内容是用到了的。
+
+
+整体的评价指标是：rating Prediction accuracy预测的准确的
+
 
 Cross-Domain Recommendation: An Embedding and Mapping Approach
 ----------------------------------------------------------------

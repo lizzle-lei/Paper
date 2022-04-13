@@ -1,0 +1,107 @@
+4月刷题记录
+=====================
+
+前言
+=============
+作为一个计算机学院的学生至今一直没有好好的认真的刷过题。
+包括之间保研的时候，刷题也一直是3天晒网2天打渔的在进行着，几次机试的成绩都不是很理想。
+很久没有刷题，一方面导致自己的逻辑思维能力在逐渐下降，另一方面自己的动手能力也在下降，越来越抗拒写代码，对代码的理解也不到位。
+所以，选择每日一题在作为每天的daily——routine来逐渐回复自己的刷题手感。
+这次选择的语言是C++，看九佬的建议是学一点stl就可以去刷题了，之前看acwing的时候看过一点，所以这次就直接开始刷了，看到不会再补。
+前期可能还是以抄代码为主，多看多写多思考。同时通过每天记录一个算法的方式来进行表达能力的训练。
+可能这依旧会是一个痛苦的行为，但我相信自己可以的。我想要自己能够坚持下去！
+
+4.13
+==========
+
+今天是一道关于数组的题目，一开始一点想法都没有，所以直接去看了题解
+
+题目
+
+`380. O(1) 时间插入、删除和获取随机元素 <https://leetcode-cn.com/problems/insert-delete-getrandom-o1>`_
+
+题目描述：
+
+    实现RandomizedSet 类：
+
+    • RandomizedSet() 初始化 RandomizedSet 对象
+    • bool insert(int val) 当元素 val 不存在时，向集合中插入该项，并返回 true ；否则，返回 false 。
+    • bool remove(int val) 当元素 val 存在时，从集合中移除该项，并返回 true ；否则，返回 false 。
+    • int getRandom() 随机返回现有集合中的一项（测试用例保证调用此方法时集合中至少存在一个元素）。每个元素应该有 相同的概率 被返回。
+    • 你必须实现类的所有函数，并满足每个函数的平均时间复杂度为 O(1) 
+
+示例：
+
+    输入：
+    ["RandomizedSet", "insert", "remove", "insert", "getRandom", "remove", "insert", "getRandom"]
+    [[], [1], [2], [2], [], [1], [2], []]
+
+    输出：
+    [null, true, false, true, 2, true, false, 2]
+
+思路：
+
+1、需要在o(1)的时间复杂度内完成插入、删除和随机获取操作，所以需要一个数组和一个hashmap来记录数据。
+
+2、使用一个变长数组来存放元素的值，通过一个哈希表来存放值在变成数组中存放的位置，通过这样的操作来完成插入、删除和随机获取操作。
+
+3、对于插入操作：首先判断元素是否已经存在，这里可以用count函数，如果存在则返回false,如果不存在则进行插入操作，并返回true。
+
+插入操作，首先获取变长数组当前的长度，其将作为当前元素的下标，获取元素使用的是size()函数，其次将元素值和下标存放到哈希表中，最后将元素值插入到变长数组中。
+元素插入变长数组中使用的函数时emplace_back(),其由于不需要触发拷贝构造和移动构造，因此其将十分高效。
+
+4、对于删除操作：首先判断元素是否已经存在，这里依旧选用count函数，如果存在则进行删除操作，并返回true，如果不存在则返回false。
+
+对于删除，基本的实现逻辑是用变长数组的最后一个元素替代需要删除的元素，同时更新最后一个元素在哈希表中的下标，最终利用pop_back()函数删除变长数组中的最后一个元素。
+使用erase()函数删除哈希表中的对应键值对。
+
+5、对于随机操作的下标：使用rand()%nums.size()来获取下标。对于随机种子的选择，则利用randn((unsigned)time(NULL))来获取随机种子。
+
+代码：
+
+::
+
+    class RandomizedSet {
+    private:
+        vector<int> nums;
+        unordered_map<int, int> mp;
+    public:
+        RandomizedSet() {
+            srand((unsigned)time(NULL));
+        }
+        
+        bool insert(int val) {
+            if(mp.count(val)) {
+                return false;
+            }
+            int index = nums.size();
+            mp[val] = index;
+            nums.emplace_back(val);
+            return true;
+        }
+        
+        bool remove(int val) {
+            if(!mp.count(val)){
+                return false;
+            }
+            int index = mp[val];
+            int last = nums.back();
+            mp[last] = index;
+            nums[index] = last;
+            nums.pop_back();
+            mp.erase(val);
+            return true;
+        }
+        
+        int getRandom() {
+            return nums[rand() % nums.size()];
+        }
+    };
+
+    /**
+    * Your RandomizedSet object will be instantiated and called as such:
+    * RandomizedSet* obj = new RandomizedSet();
+    * bool param_1 = obj->insert(val);
+    * bool param_2 = obj->remove(val);
+    * int param_3 = obj->getRandom();
+    */

@@ -1,0 +1,40 @@
+20220326——论文阅读
+===================
+Cross-Domain Recommendation: Challenges, Progress and Prospects
+------------------------------------------------------------------
+这篇文章是一篇综述类型的文章，发表在2021年的IJCAI上，是陈超超老师在蚂蚁金服期间的产出之一。
+
+文章首先对Domain(域)进行了定义
+1. content-level relevance
+   两个域之间存在一些共有的属性，或者内容；但是在两个域中是没有共有的user和item的
+
+2. User-level relvance
+   两个域之间拥有共有的用户，但是item层是不相同的，例如说属性层面的不同，属于教科书/小说;类别不同，属于电影或者书籍
+   
+3. Item-level relevance
+   两个域之间拥有共有的item，但是用户不同；例如MoviewLens和Netfilx两个系统中存在共有的电影，但是其用户不同。这一类型也通常被认为是cross-system recommendation
+
+其次文章对CDR的类型进行了划分
+1. content-based transfer approaches
+   这一技术通常用于content-level relevance的domain,通过寻找相似的内容信息来实现推荐，例如item的详细信息，用户所生成的评论信息，社交的tag。
+
+2. embedding-based transfer approaches
+   这一技术通常用于User-level relevance和Item-level relevance的domain.
+   其首先需要训练一些CF-based models:
+   Singular value decomposition
+   maximum-margin matrix factorisation
+   probabilistic matrix factorisation
+   bayesian personalized ranking
+   neural collaborative filtering
+   deep matrix factorisation
+   graphic model
+   通过上述的这些方面来训练得到user和item的embedding，接着通过common user/item去实现transfer
+
+   
+3. rating pattern-based transfer
+   transfer an independent knowledge:rating patterns across domain
+
+CDR又可以根据实现的目标不同，分为以下三个：
+1. single-target CDR
+2. dual-target CDR
+3. multi-target CDR

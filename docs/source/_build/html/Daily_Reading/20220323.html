@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>20220323论文阅读 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <title>20220323——论文阅读 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
     <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
   <!--[if lt IE 9]>
     <script src="../_static/js/html5shiv.min.js"></script>
@@ -15,7 +15,9 @@
         <script src="../_static/language_data.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="D2L" href="../D2L/index.html" />
+    <link rel="prev" title="20220322——论文阅读" href="20220322.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,9 +35,32 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
-<li class="toctree-l1"><a class="reference internal" href="index.html">论文阅读</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">论文阅读</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="reading_tips.html">怎么读论文–by 李沐</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20220317.html">20220317——论文阅读</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20220318.html">20220318——论文阅读</a></li>
+<li class="toctree-l2"><a class="reference internal" href="20220322.html">20220322——论文阅读</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">20220323——论文阅读</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#meta-learning-on-heterogeneous-information-networks-for-cold-start-recommendation">Meta-learning on Heterogeneous Information Networks for Cold-start Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#fairness-among-new-items-in-cold-start-recommender-systems">Fairness among New Items in Cold Start Recommender Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#learning-graph-meta-embeddings-for-cold-start-ads-in-click-through-rate-prediction">Learning Graph Meta Embeddings for Cold-Start Ads in Click-Through Rate Prediction</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#learning-to-warm-up-cold-item-embeddings-for-cold-start-recommendation-with-meta-scaling-and-shifting-networks">Learning to Warm Up Cold Item Embeddings for Cold-start Recommendation with Meta Scaling and Shifting Networks</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#sparsity-regularization-for-cold-start-recommendation">Sparsity Regularization for Cold-Start Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#metakg-meta-learning-on-knowledge-graph-for-cold-start-recommendation">MetaKG: Meta-learning on Knowledge Graph for Cold-start Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#task-adaptive-neural-process-for-user-cold-start-recommendation">Task-adaptive Neural Process for User Cold-Start Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#collaborative-filtering-with-attribution-alignment-for-review-based-non-overlapped-cross-domain-recommendation">Collaborative Filtering with Attribution Alignment for Review-based Non-overlapped Cross Domain Recommendation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#a-deep-framework-for-cross-domain-and-cross-system-recommendations">A Deep Framework for Cross-Domain and Cross-System Recommendations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#methods-and-metrics-for-cold-start-recommendations">Methods and Metrics for Cold-Start Recommendations</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#grouplens-an-open-architecture-for-collaborative-filtering-of-netnews">GroupLens: An Open Architecture for Collaborative Filtering of Netnews</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#using-collabrative-filtering-to-weave-an-information-typestry">Using collabrative filtering to weave an information typestry</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#wide-deep-learning-for-recommender-systems">Wide &amp; Deep Learning for Recommender Systems</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#cross-domain-generalization-and-knowledge-transfer-in-transformers-trained-on-legal-data">Cross-Domain Generalization and Knowledge Transfer in Transformers Trained on Legal Data</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
 </ul>
 
@@ -53,7 +78,8 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
-      <li>20220323论文阅读</li>
+          <li><a href="index.html">论文阅读</a> &raquo;</li>
+      <li>20220323——论文阅读</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/Daily_Reading/20220323.rst.txt" rel="nofollow"> View page source</a>
       </li>
@@ -64,7 +90,7 @@
            <div itemprop="articleBody">
              
   <div class="section" id="id1">
-<h1>20220323论文阅读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<h1>20220323——论文阅读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="meta-learning-on-heterogeneous-information-networks-for-cold-start-recommendation">
 <h2>Meta-learning on Heterogeneous Information Networks for Cold-start Recommendation<a class="headerlink" href="#meta-learning-on-heterogeneous-information-networks-for-cold-start-recommendation" title="Permalink to this headline">¶</a></h2>
 <p>本文的代码：<a class="reference external" href="https://github.com/rootlu/MetaHIN">https://github.com/rootlu/MetaHIN</a></p>
@@ -236,7 +262,10 @@ vertical attribution aligment: 利用典型的样本选择和最优transport使�
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="20220322.html" class="btn btn-neutral float-left" title="20220322——论文阅读" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../D2L/index.html" class="btn btn-neutral float-right" title="D2L" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
 
   <hr/>
 

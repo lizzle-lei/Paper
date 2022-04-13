@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="en" >
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>20220326——论文阅读 &mdash; Lizzle 0.1 documentation</title><link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+    <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+  <!--[if lt IE 9]>
+    <script src="../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  <script id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script src="../_static/jquery.js"></script>
+        <script src="../_static/underscore.js"></script>
+        <script src="../_static/doctools.js"></script>
+        <script src="../_static/language_data.js"></script>
+    <script src="../_static/js/theme.js"></script>
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+            <a href="../index.html" class="icon icon-home"> Lizzle
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
+<li class="toctree-l1"><a class="reference internal" href="index.html">论文阅读</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">Lizzle</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+      <li>20220326——论文阅读</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../_sources/Daily_Reading/20220326.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <div class="section" id="id1">
+<h1>20220326——论文阅读<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="cross-domain-recommendation-challenges-progress-and-prospects">
+<h2>Cross-Domain Recommendation: Challenges, Progress and Prospects<a class="headerlink" href="#cross-domain-recommendation-challenges-progress-and-prospects" title="Permalink to this headline">¶</a></h2>
+<p>这篇文章是一篇综述类型的文章，发表在2021年的IJCAI上，是陈超超老师在蚂蚁金服期间的产出之一。</p>
+<p>文章首先对Domain(域)进行了定义
+1. content-level relevance</p>
+<blockquote>
+<div><p>两个域之间存在一些共有的属性，或者内容；但是在两个域中是没有共有的user和item的</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>User-level relvance
+两个域之间拥有共有的用户，但是item层是不相同的，例如说属性层面的不同，属于教科书/小说;类别不同，属于电影或者书籍</p></li>
+<li><p>Item-level relevance
+两个域之间拥有共有的item，但是用户不同；例如MoviewLens和Netfilx两个系统中存在共有的电影，但是其用户不同。这一类型也通常被认为是cross-system recommendation</p></li>
+</ol>
+<p>其次文章对CDR的类型进行了划分
+1. content-based transfer approaches</p>
+<blockquote>
+<div><p>这一技术通常用于content-level relevance的domain,通过寻找相似的内容信息来实现推荐，例如item的详细信息，用户所生成的评论信息，社交的tag。</p>
+</div></blockquote>
+<ol class="arabic simple" start="2">
+<li><p>embedding-based transfer approaches
+这一技术通常用于User-level relevance和Item-level relevance的domain.
+其首先需要训练一些CF-based models:
+Singular value decomposition
+maximum-margin matrix factorisation
+probabilistic matrix factorisation
+bayesian personalized ranking
+neural collaborative filtering
+deep matrix factorisation
+graphic model
+通过上述的这些方面来训练得到user和item的embedding，接着通过common user/item去实现transfer</p></li>
+<li><p>rating pattern-based transfer
+transfer an independent knowledge:rating patterns across domain</p></li>
+</ol>
+<p>CDR又可以根据实现的目标不同，分为以下三个：
+1. single-target CDR
+2. dual-target CDR
+3. multi-target CDR</p>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2022, lizzle.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
