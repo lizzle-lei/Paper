@@ -15,7 +15,8 @@
         <script src="../_static/language_data.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
-    <link rel="search" title="Search" href="../search.html" /> 
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="prev" title="刷题记录" href="index.html" /> 
 </head>
 
 <body class="wy-body-for-nav"> 
@@ -33,10 +34,21 @@
   </form>
 </div>
         </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
-              <ul>
+              <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../CSAPP/index.html">CSAPP</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../Daily_Reading/index.html">论文阅读</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../D2L/index.html">D2L</a></li>
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">刷题记录</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">4月刷题记录</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id2">前言</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">4.13</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id4">题目</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
 </ul>
 
         </div>
@@ -53,6 +65,7 @@
           <div role="navigation" aria-label="Page navigation">
   <ul class="wy-breadcrumbs">
       <li><a href="../index.html" class="icon icon-home"></a> &raquo;</li>
+          <li><a href="index.html">刷题记录</a> &raquo;</li>
       <li>4月刷题记录</li>
       <li class="wy-breadcrumbs-aside">
             <a href="../_sources/刷题记录/4月刷题记录.rst.txt" rel="nofollow"> View page source</a>
@@ -65,9 +78,8 @@
              
   <div class="section" id="id1">
 <h1>4月刷题记录<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h1>
-</div>
 <div class="section" id="id2">
-<h1>前言<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h1>
+<h2>前言<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
 <p>作为一个计算机学院的学生至今一直没有好好的认真的刷过题。
 包括之间保研的时候，刷题也一直是3天晒网2天打渔的在进行着，几次机试的成绩都不是很理想。
 很久没有刷题，一方面导致自己的逻辑思维能力在逐渐下降，另一方面自己的动手能力也在下降，越来越抗拒写代码，对代码的理解也不到位。
@@ -77,11 +89,13 @@
 可能这依旧会是一个痛苦的行为，但我相信自己可以的。我想要自己能够坚持下去！</p>
 </div>
 <div class="section" id="id3">
-<h1>4.13<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h1>
+<h2>4.13<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
 <p>今天是一道关于数组的题目，一开始一点想法都没有，所以直接去看了题解</p>
-<p>题目</p>
+<div class="section" id="id4">
+<h3>题目<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h3>
 <p><a class="reference external" href="https://leetcode-cn.com/problems/insert-delete-getrandom-o1">380. O(1) 时间插入、删除和获取随机元素</a></p>
-<p>题目描述：</p>
+<div class="section" id="id5">
+<h4>题目描述：<a class="headerlink" href="#id5" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><p>实现RandomizedSet 类：</p>
 <ul class="simple">
@@ -92,7 +106,9 @@
 <li><p>你必须实现类的所有函数，并满足每个函数的平均时间复杂度为 O(1)</p></li>
 </ul>
 </div></blockquote>
-<p>示例：</p>
+</div>
+<div class="section" id="id6">
+<h4>示例：<a class="headerlink" href="#id6" title="Permalink to this headline">¶</a></h4>
 <blockquote>
 <div><p>输入：
 [“RandomizedSet”, “insert”, “remove”, “insert”, “getRandom”, “remove”, “insert”, “getRandom”]
@@ -100,7 +116,9 @@
 <p>输出：
 [null, true, false, true, 2, true, false, 2]</p>
 </div></blockquote>
-<p>思路：</p>
+</div>
+<div class="section" id="id7">
+<h4>思路：<a class="headerlink" href="#id7" title="Permalink to this headline">¶</a></h4>
 <p>1、需要在o(1)的时间复杂度内完成插入、删除和随机获取操作，所以需要一个数组和一个hashmap来记录数据。</p>
 <p>2、使用一个变长数组来存放元素的值，通过一个哈希表来存放值在变成数组中存放的位置，通过这样的操作来完成插入、删除和随机获取操作。</p>
 <p>3、对于插入操作：首先判断元素是否已经存在，这里可以用count函数，如果存在则返回false,如果不存在则进行插入操作，并返回true。</p>
@@ -110,7 +128,9 @@
 <p>对于删除，基本的实现逻辑是用变长数组的最后一个元素替代需要删除的元素，同时更新最后一个元素在哈希表中的下标，最终利用pop_back()函数删除变长数组中的最后一个元素。
 使用erase()函数删除哈希表中的对应键值对。</p>
 <p>5、对于随机操作的下标：使用rand()%nums.size()来获取下标。对于随机种子的选择，则利用randn((unsigned)time(NULL))来获取随机种子。</p>
-<p>代码：</p>
+</div>
+<div class="section" id="id8">
+<h4>代码：<a class="headerlink" href="#id8" title="Permalink to this headline">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>class RandomizedSet {
 private:
     vector&lt;int&gt; nums;
@@ -158,11 +178,16 @@ public:
 </pre></div>
 </div>
 </div>
+</div>
+</div>
+</div>
 
 
            </div>
           </div>
-          <footer>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="index.html" class="btn btn-neutral float-left" title="刷题记录" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+    </div>
 
   <hr/>
 

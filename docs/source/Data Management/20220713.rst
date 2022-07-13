@@ -1,0 +1,15 @@
+20220713——论文阅读
+===================
+
+TensorFlow Data Validation: Data Analysis and Validation in Continuous ML Pipelines
+--------------------------------------------------------------------------------------
+文章阅读时间：34分钟
+
+文章来源：2020年SIGMOD Demonstrations
+
+作者都来自于谷歌，其提出了TFDV，这是一个用来进行data Analysis 和Validation的system，主要用在ML中
+
+TFDV能够对数据进行统计性的分析；推测出每一个feature的schema；将training data和evaluation data 进行验证，是否保持一致；进行倾斜校正，观察用于训练的数据与应用中的数据是否是一致的分布；
+TFDV还能够区分语义类型（NLP，image，date/time），自动进行特征工程和模式匹配等。
+
+其能够应用于工业界且其代码是开源的。
